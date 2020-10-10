@@ -1,0 +1,41 @@
+{
+    "name": "kayschima/deutsche-bahn",
+    "description": ":package_description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Kay Markschies",
+            "email": "kayschima@web.de",
+            "homepage": "https://markschies.com"
+        }
+    ],
+    "homepage": "https://github.com/kayschima/deutsche-bahn",
+    "keywords": ["Laravel", "Deutsche", "Bahn", "DB", "API"],
+    "require": {
+        "illuminate/support": "~7|~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kayschima\\DeutscheBahn\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kayschima\\DeutscheBahn\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kayschima\\DeutscheBahn\\DeutscheBahnServiceProvider"
+            ],
+            "aliases": {
+                "DeutscheBahn": "Kayschima\\DeutscheBahn\\Facades\\DeutscheBahn"
+            }
+        }
+    }
+}
