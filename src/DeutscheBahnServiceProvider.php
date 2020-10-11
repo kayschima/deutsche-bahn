@@ -21,9 +21,6 @@ class DeutscheBahnServiceProvider extends ServiceProvider
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
-            $this->commands([
-                DeutscheBahnCommand::class,
-            ]);
         }
     }
 
@@ -80,6 +77,8 @@ class DeutscheBahnServiceProvider extends ServiceProvider
         ], 'deutsche-bahn.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+        $this->commands([
+            DeutscheBahnCommand::class,
+        ]);
     }
 }
