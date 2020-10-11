@@ -1,7 +1,8 @@
 {
     "name": "kayschima/deutsche-bahn",
-    "description": ":package_description",
-    "license": "license",
+    "description": "Package for Deutsche Bahn timetables",
+    "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Kay Markschies",
@@ -10,9 +11,10 @@
         }
     ],
     "homepage": "https://github.com/kayschima/deutsche-bahn",
-    "keywords": ["Laravel", "Deutsche", "Bahn", "DB", "API"],
+    "keywords": ["Laravel", "Deutsche", "Bahn", "Fahrpläne","Timetables","DB", "API"],
     "require": {
-        "illuminate/support": "~7|~8"
+        "illuminate/support": "~7|~8",
+        "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
@@ -20,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kayschima\\DeutscheBahn\\": "src/"
+            "Kayschima\\DeutscheBahn\\": "src"
         }
     },
     "autoload-dev": {
