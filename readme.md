@@ -14,12 +14,16 @@ Via Composer
 $ composer require kayschima/deutsche-bahn
 ```
 
+Publish the config file
+``` bash
+$ php artisan vendor:publish --provider "Kayschima\DeutscheBahn\DeutscheBahnServiceProvider"
+```
 
 ## Usage
 The usage of the package is quite simple:
 - Get you API token at 
 (https://developer.deutschebahn.com/store/).
-- Fetch this package via Composer
+- Fetch and install this package via Composer
 - Set your API token in your .env file:
 
 ``` bash
