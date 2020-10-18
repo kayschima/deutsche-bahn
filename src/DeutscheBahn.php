@@ -36,7 +36,7 @@ class DeutscheBahn
 
             if ($details) {
                 foreach ($returnArray as $key => $item) {
-                    $returnArray[$key]['details'] = $this->addDetails($item['detailsId']);
+                    $returnArray[$key]['details'] = $this->getDetails($item['detailsId']);
                 }
             }
         }
@@ -67,7 +67,7 @@ class DeutscheBahn
 
             if ($details) {
                 foreach ($returnArray as $key => $item) {
-                    $returnArray[$key]['details'] = $this->addDetails($item['detailsId']);
+                    $returnArray[$key]['details'] = $this->getDetails($item['detailsId']);
                 }
             }
         }
@@ -79,10 +79,10 @@ class DeutscheBahn
      *
      * @return array|mixed
      */
-    private function addDetails(string $details_id)
+    public function getDetails(string $details_id)
     {
         $response = Http::withToken(config('deutsche-bahn.api-token'))
-                        ->get('https://api.deutschebahn.com/fahrplan-plus/v1/journeyDetails/'. rawurlencode($details_id));
+                        ->get('https://api.deutschebahn.com/fahrplan-plus/v1/journeyDetails/'.rawurlencode($details_id));
 
         if ( ! $response->successful()) {
             return [];
