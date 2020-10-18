@@ -1,6 +1,6 @@
 {
     "name": "kayschima/deutsche-bahn",
-    "description": "Package for Deutsche Bahn timetables",
+    "description": "Laravel package for Deutsche Bahn timetables",
     "license": "MIT",
     "type": "library",
     "authors": [
