@@ -18,6 +18,11 @@ class DeutscheBahnServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        // Publishing the configuration file.
+        $this->publishes([
+            __DIR__.'/../config/deutsche-bahn.php' => config_path('deutsche-bahn.php'),
+        ], 'deutsche-bahn.config');
+
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
@@ -31,10 +36,6 @@ class DeutscheBahnServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Publishing the configuration file.
-        $this->publishes([
-            __DIR__.'/../config/deutsche-bahn.php' => config_path('deutsche-bahn.php'),
-        ], 'deutsche-bahn.config');
 
         // Register the service the package provides.
         $this->app->singleton('deutsche-bahn', function ($app) {
