@@ -31,7 +31,10 @@ class DeutscheBahnServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/deutsche-bahn.php', 'deutsche-bahn');
+        // Publishing the configuration file.
+        $this->publishes([
+            __DIR__.'/../config/deutsche-bahn.php' => config_path('deutsche-bahn.php'),
+        ], 'deutsche-bahn.config');
 
         // Register the service the package provides.
         $this->app->singleton('deutsche-bahn', function ($app) {
@@ -56,10 +59,6 @@ class DeutscheBahnServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
-        // Publishing the configuration file.
-        $this->publishes([
-            __DIR__.'/../config/deutsche-bahn.php' => config_path('deutsche-bahn.php'),
-        ], 'deutsche-bahn.config');
 
         // Publishing the views.
         /*$this->publishes([
